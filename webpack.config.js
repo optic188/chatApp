@@ -19,6 +19,10 @@ module.exports = {
     filename: 'bundle.js',
   },
   module: {
+   preLoaders: [
+        // Javascript
+        { test: /\.jsx?$/, loader: 'eslint', exclude: /node_modules/ }
+    ],
     loaders: [
       {
         test: /\.js$/,
@@ -36,6 +40,10 @@ module.exports = {
       }
     ],
   },
+  eslint: {
+        failOnWarning: false,
+        failOnError: true
+   },
   devServer: {
     contentBase: __dirname + '/public',
   },

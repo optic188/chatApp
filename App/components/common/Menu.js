@@ -5,8 +5,8 @@ import { IndexLinkContainer, LinkContainer } from "react-router-bootstrap";
 // Menu component
 export default class Menu extends React.Component {
   // render
-  render() {
-    return (
+    render() {
+        return (
       <Nav bsStyle="pills">
         <IndexLinkContainer to="/">
           <NavItem>
@@ -22,6 +22,6 @@ export default class Menu extends React.Component {
           redux-minimal
         </NavItem>
       </Nav>
-    );
-  }
+        );
+    }
 }
