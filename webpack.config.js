@@ -5,6 +5,7 @@ var path = require('path');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
+    devtool: 'source-map',
   app_root: 'app_root', // the app root folder, needed by the other webpack configs
   entry: [
     // http://gaearon.github.io/react-hot-loader/getstarted/

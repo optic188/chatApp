@@ -6,7 +6,7 @@ import UserListElement from "./UserListElement";
 import UserDeletePrompt from "./UserDeletePrompt";
 
 // User list component
-export class UserList extends React.Component {
+class UserList extends React.Component {
   // constructor
     constructor(props) {
         super(props);
@@ -84,7 +84,7 @@ export class UserList extends React.Component {
           {users.map((user, index) => {
               if (index >= startOffset && startCount < perPage) {
                   startCount++;
-                  <UserListElement key={index} user={user} showDelete={this.showDelete}/>;
+                  return <UserListElement key={index} user={user} showDelete={this.showDelete}/>;
               }
           })}
           </tbody>

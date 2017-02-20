@@ -64,7 +64,6 @@ UserEditForm.PropTypes = {
     submitting: React.PropTypes.bool,
     error: React.PropTypes.string,
     dispatch: React.PropTypes.func
-
 };
 // decorate the form component
 const UserEdit = reduxForm({

@@ -6,6 +6,9 @@ import "../stylesheets/main.scss";
 
 // App component
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+    }
   // pre-render logic
     componentWillMount() {
     // the first time we load the app, we need that users list
