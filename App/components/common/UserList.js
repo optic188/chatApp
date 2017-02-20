@@ -24,49 +24,6 @@ export class UserList extends React.Component {
         this.userDelete = this.userDelete.bind(this);
     }
 
-  // render
-    render() {
-    // pagination
-        const {users, page} = this.props;
-        const per_page = 10;
-        const pages = Math.ceil(users.length / per_page);
-        const start_offset = (page - 1) * per_page;
-        let start_count = 0;
-
-    // show the list of users
-        return (
-      <div>
-        <Table bordered hover responsive striped>
-          <thead>
-          <tr>
-            <th>ID</th>
-            <th>Username</th>
-            <th>Job</th>
-            <th>Edit</th>
-            <th>Delete</th>
-          </tr>
-          </thead>
-          <tbody>
-          {users.map((user, index) => {
-              if (index >= start_offset && start_count < per_page) {
-                  start_count++;
-                  return (
-                <UserListElement key={index} user={user} showDelete={this.showDelete}/>
-                  );
-              }
-          })}
-          </tbody>
-        </Table>
-
-        <Pagination className="users-pagination pull-right" bsSize="medium" maxButtons={10} first last next
-          prev boundaryLinks items={pages} activePage={page} onSelect={this.changePage}/>
-
-        <UserDeletePrompt show={this.state.delete_show} user={this.state.delete_user}
-          hideDelete={this.hideDelete} userDelete={this.userDelete}/>
-      </div>
-        );
-    }
-
   // change the user lists' current page
     changePage(page) {
         this.props.dispatch(push("/?page=" + page));
@@ -101,8 +58,54 @@ export class UserList extends React.Component {
     // hide the prompt
         this.hideDelete();
     }
+     // render
+    render() {
+    // pagination
+        const {users, page} = this.props;
+        const perPage = 10;
+        const pages = Math.ceil(users.length / perPage);
+        const startOffset = (page - 1) * perPage;
+        let startCount = 0;
+
+    // show the list of users
+        return (
+      <div>
+        <Table bordered hover responsive striped>
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Job</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+          </thead>
+          <tbody>
+          {users.map((user, index) => {
+              if (index >= startOffset && startCount < perPage) {
+                  startCount++;
+                  <UserListElement key={index} user={user} showDelete={this.showDelete}/>;
+              }
+          })}
+          </tbody>
+        </Table>
+
+        <Pagination className="users-pagination pull-right" bsSize="medium" maxButtons={10} first last next
+          prev boundaryLinks items={pages} activePage={page} onSelect={this.changePage}/>
+
+        <UserDeletePrompt show={this.state.delete_show} user={this.state.delete_user}
+          hideDelete={this.hideDelete} userDelete={this.userDelete}/>
+      </div>
+        );
+    }
 }
 
+UserList.propTypes = {
+    users: React.PropTypes.array,
+    dispatch: React.PropTypes.func,
+    page: React.PropTypes.number
+
+};
 // export the connected class
 function mapStateToProps(state) {
     return {

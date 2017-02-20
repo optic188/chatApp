@@ -3,28 +3,6 @@ import { FormGroup, FormControl, HelpBlock, Row, Col } from "react-bootstrap";
 
 // Form field component
 export default class FormField extends React.Component {
-  // render
-    render() {
-        const {className, doValidate, meta} = this.props;
-        if (doValidate) {
-            return (
-        <FormGroup className={className}
-          validationState={!meta.touched ? null : (meta.error ? "error" : "success")}>
-          {this.content()}
-          <FormControl.Feedback/>
-          <HelpBlock>
-            {meta.touched && meta.error ? meta.error : null}
-          </HelpBlock>
-        </FormGroup>
-            );
-        }
-        return (
-        <FormGroup className={className}>
-          {this.content()}
-        </FormGroup>
-        );
-    }
-
   // the field content
     content() {
         const {theme, label} = this.props;
@@ -50,6 +28,27 @@ export default class FormField extends React.Component {
       </FormControl>
         );
     }
+     // render
+    render() {
+        const {className, doValidate, meta} = this.props;
+        if (doValidate) {
+            return (
+        <FormGroup className={className}
+          validationState={meta.touched && meta.error ? meta.error : null} >
+          {this.content()}
+          <FormControl.Feedback/>
+          <HelpBlock>
+            {meta.touched && meta.error ? meta.error : null}
+          </HelpBlock>
+        </FormGroup>
+            );
+        }
+        return (
+        <FormGroup className={className}>
+          {this.content()}
+        </FormGroup>
+        );
+    }
 }
 
 // prop checks
@@ -62,5 +61,6 @@ FormField.propTypes = {
     componentClass: PropTypes.string, // input (by default), textarea, select
     type: PropTypes.string,   // input type: text (by default), password
     placeholder: PropTypes.string,    // input placeholder (empty string by default)
+    children: PropTypes.string,
     className: PropTypes.string,  // the class name (empty string by default)
 };

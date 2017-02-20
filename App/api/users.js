@@ -1,4 +1,4 @@
-
+/* global  Promise:true*/
 // API Users static class
 export default class ApiUsers {
   // get a list of users

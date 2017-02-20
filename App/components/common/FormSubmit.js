@@ -15,9 +15,7 @@ export default class FormSubmit extends React.Component {
 
         <FormGroup className="submit">
           <Button type="submit" bsStyle="primary" disabled={invalid || submitting}>
-            {submitting ?
-              (buttonSaveLoading ? buttonSaveLoading : "Saving...") :
-              (buttonSave ? buttonSave : "Save")}
+            {submitting}{buttonSaveLoading} {buttonSave}
           </Button>
         </FormGroup>
       </div>

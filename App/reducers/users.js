@@ -1,3 +1,4 @@
+/* eslint-disable */
 // users reducer
 export default function users(state = {}, action) {
     switch (action.type) {
@@ -13,7 +14,6 @@ export default function users(state = {}, action) {
             return state.map(user =>
         Number(user.id) === Number(action.user.id) ? {...action.user} : user
       );
-            break;
 
         case "USERS_DELETE_SAVE":
             return state.filter(user =>

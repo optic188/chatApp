@@ -5,7 +5,7 @@ import Menu from "./common/Menu";
 import "../stylesheets/main.scss";
 
 // App component
-export class App extends React.Component {
+class App extends React.Component {
   // pre-render logic
     componentWillMount() {
     // the first time we load the app, we need that users list
@@ -38,7 +38,12 @@ export class App extends React.Component {
         );
     }
 }
+App.PropTypes = {
+    usrFetchList: React.PropTypes.array,
+    users: React.PropTypes.array,
+    children: React.PropTypes.array
 
+};
 // export the connected class
 const mapStateToProps = (state)=> {
     return {

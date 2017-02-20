@@ -2,7 +2,7 @@ import { call, put } from "redux-saga/effects";
 import ApiUsers from "../api/users";
 
 // fetch the user's list
-export function* usersFetchList(action) {
+export function* usersFetchList() {
   // call the api to get the users list
     const users = yield call(ApiUsers.getList);
 
