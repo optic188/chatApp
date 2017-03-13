@@ -11,7 +11,7 @@ import FormSubmit from "./common/FormSubmit";
 
 // User add/edit page component
 class UserEditForm extends React.Component {
-  // constructor
+    // constructor
     constructor(props) {
         super(props);
 
@@ -57,12 +57,11 @@ class UserEditForm extends React.Component {
     }
 }
 
-UserEditForm.PropTypes = {
+UserEditForm.propTypes = {
     user: React.PropTypes.object,
     handleSubmit: React.PropTypes.func,
-    invalid: React.PropTypes.string,
     submitting: React.PropTypes.bool,
-    error: React.PropTypes.string,
+    error: React.PropTypes.object,
     dispatch: React.PropTypes.func
 };
 // decorate the form component

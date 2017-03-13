@@ -20,6 +20,7 @@ class App extends React.Component {
     render() {
     // show the loading state while we wait for the app to load
         const {users, children} = this.props;
+
         if (!users.length) {
             return (
         <ProgressBar active now={100}/>
@@ -32,7 +33,6 @@ class App extends React.Component {
         <div>
           <Menu/>
         </div>
-        <div>hui1</div>
         <div>
           {children}
         </div>
@@ -41,11 +41,8 @@ class App extends React.Component {
         );
     }
 }
-App.PropTypes = {
-    usrFetchList: React.PropTypes.array,
-    users: React.PropTypes.array,
-    children: React.PropTypes.array
-
+App.propTypes = {
+    usrFetchList: React.PropTypes.func
 };
 // export the connected class
 const mapStateToProps = (state)=> {

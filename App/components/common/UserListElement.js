@@ -1,4 +1,4 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import { Link } from "react-router";
 import { Button, Glyphicon } from "react-bootstrap";
 
@@ -9,7 +9,7 @@ export default class UserListElement extends React.Component {
         const {user, showDelete} = this.props;
         return (
       <tr>
-        <td>#{user.id}</td>
+        <td>{user.id}</td>
         <td>{user.username}</td>
         <td>{user.job}</td>
         <td>
@@ -31,6 +31,6 @@ export default class UserListElement extends React.Component {
 
 // prop checks
 UserListElement.propTypes = {
-    user: PropTypes.object.isRequired,
-    showDelete: PropTypes.func.isRequired,
+    user: React.PropTypes.object.isRequired,
+    showDelete: React.PropTypes.func.isRequired,
 };

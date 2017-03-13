@@ -8,7 +8,7 @@
   "globals": {
     "expect": true,
     "sinon": true,
-    "PropTypes":true,
+    "React.PropTypes":true,
     "children":true,
     "dispatch":true,
     "action":true,
@@ -40,7 +40,7 @@
     /**
      * Variables
      */
-    "no-shadow": 2,                  // http://eslint.org/docs/rules/no-shadow
+    "no-shadow": 1,                  // http://eslint.org/docs/rules/no-shadow
     "no-shadow-restricted-names": 2, // http://eslint.org/docs/rules/no-shadow-restricted-names
     "no-undef": 2,                   // http://eslint.org/docs/rules/no-undef
     "no-unused-vars": [2, {          // http://eslint.org/docs/rules/no-unused-vars
@@ -53,7 +53,7 @@
      * Possible errors
      */
     "no-cond-assign": [2, "always"], // http://eslint.org/docs/rules/no-cond-assign
-    "no-console": 1,                 // http://eslint.org/docs/rules/no-console
+    "no-console": 0,                 // http://eslint.org/docs/rules/no-console
     "no-debugger": 1,                // http://eslint.org/docs/rules/no-debugger
     "no-alert": 1,                   // http://eslint.org/docs/rules/no-alert
     "no-constant-condition": 1,      // http://eslint.org/docs/rules/no-constant-condition
@@ -109,7 +109,7 @@
     "no-script-url": 2,              // http://eslint.org/docs/rules/no-script-url
     "no-self-compare": 2,            // http://eslint.org/docs/rules/no-self-compare
     "no-sequences": 2,               // http://eslint.org/docs/rules/no-sequences
-    "no-throw-literal": 2,           // http://eslint.org/docs/rules/no-throw-literal
+    "no-throw-literal": 0,           // http://eslint.org/docs/rules/no-throw-literal
     "no-with": 2,                    // http://eslint.org/docs/rules/no-with
     "radix": 2,                      // http://eslint.org/docs/rules/radix
     "vars-on-top": 2,                // http://eslint.org/docs/rules/vars-on-top

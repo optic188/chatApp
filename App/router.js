@@ -4,6 +4,7 @@ import { history } from "./store.js";
 import App from "./components/App";
 import Home from "./components/Home";
 import UserEdit from "./components/UserEdit";
+import UserLogin from "./components/UserLogin";
 import NotFound from "./components/NotFound";
 
 // build the router
@@ -12,6 +13,7 @@ const router = (
     <Route path="/" component={App}>
       <IndexRoute component={Home}/>
       <Route path="user-edit(/:id)" component={UserEdit}/>
+      <Route path="user-login" component={UserLogin}/>
       <Route path="*" component={NotFound}/>
     </Route>
   </Router>

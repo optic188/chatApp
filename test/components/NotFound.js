@@ -4,11 +4,11 @@ import assert from "assert";
 import NotFound from "../../src_users/components/NotFound";
 
 // unit tests for the NotFound component
-describe('NotFound component', () => {
-  describe('render()', () => {
-    it('should render the component', () => {
-      const wrapper = shallow(<NotFound/>);
-      assert.equal(wrapper.length, 1);
+describe("NotFound component", () => {
+    describe("render()", () => {
+        it("should render the component", () => {
+            const wrapper = shallow(<NotFound/>);
+            assert.equal(wrapper.length, 1);
+        });
     });
-  });
 });
